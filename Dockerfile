@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM python:3.7-alpine
 ARG USER=maqs
-RUN useradd $USER
+RUN useradd -ms /bin/sh $USER
 USER maqs
 WORKDIR /home/maqs
 ENV FLASK_APP=app.py

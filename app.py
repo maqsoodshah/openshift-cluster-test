@@ -1,23 +1,8 @@
 import time
 
-import redis
-from flask import Flask
 
-app = Flask(__name__)
-cache = redis.Redis(host='redis', port=6379)
+def print_name(email: str)-> str:
+    time.sleep(2)
+    return email
 
-def get_hit_count():
-    retries = 5
-    while True:
-        try:
-            return cache.incr('hits')
-        except redis.exceptions.ConnectionError as exc:
-            if retries == 0:
-                raise exc
-            retries -= 1
-            time.sleep(0.5)
-
-@app.route('/')
-def hello():
-    count = get_hit_count()
-    return 'Hello World! I have been seen {} times.\n'.format(count)
+print('Hello Everyone! This is Openshift cluster deployment test.\n', print_name("Contact: mr.maqsood.shah@gmail.com"))

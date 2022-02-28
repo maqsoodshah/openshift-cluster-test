@@ -1,6 +1,5 @@
 import time
 
-
 def print_name(email: str)-> str:
     time.sleep(2)
     return email

@@ -2,7 +2,7 @@
 FROM python:3.7-alpine
 ARG USER=maqs
 RUN adduser -S $USER
-USER maqs
+USER $USER
 WORKDIR /home/maqs
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0

@@ -7,7 +7,6 @@ WORKDIR /home/maqs
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 RUN /usr/local/bin/python -m pip install --upgrade pip
-RUN apk add --no-cache gcc musl-dev linux-headers
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 EXPOSE 5000

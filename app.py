@@ -1,8 +1,14 @@
+from flask import Flask
 import time
 
-# 
-def print_email(email: str)-> str:
+app = Flask(__name__)
+  
+@app.route("/")
+def index():
     time.sleep(2)
-    return email
+    return "Hello Everyone! This is Openshift cluster deployment test.\n Contact: mr.maqsood.shah@gmail.com"
+  
+if __name__ == '__main__':
+   app.run()
 
-print('Hello Everyone! This is Openshift cluster deployment test.\n', print_email("Contact: mr.maqsood.shah@gmail.com"))
+

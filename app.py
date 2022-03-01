@@ -9,6 +9,6 @@ def index():
     return "Hello Everyone! This is Openshift cluster deployment test.\n Contact: mr.maqsood.shah@gmail.com"
   
 if __name__ == '__main__':
-   app.run()
+   app.run(debug=True, host='0.0.0.0')
 
 
